@@ -7,6 +7,7 @@ public class ExampleShipControl : MonoBehaviour {
 	public float rotation_speed = 1f;
 	public GameObject turret;
 	public float turret_rotation_speed = 3f;
+	public float thruster_amt = 1f;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,12 +18,23 @@ public class ExampleShipControl : MonoBehaviour {
 	
 	
 		if (Input.GetKeyDown(KeyCode.Escape))
-			Screen.lockCursor = !Screen.lockCursor;	
-	
-	
-	
+			Screen.lockCursor = !Screen.lockCursor;
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			thruster_amt = 100f;
+
+		}
+		else
+		{
+			thruster_amt = 1f;
+		}
+			
 		if (Input.GetKey(KeyCode.W)) {
-			GetComponent<Rigidbody2D>().AddForce(transform.up * acceleration_amount * Time.deltaTime);
+			
+				GetComponent<Rigidbody2D>().AddForce(transform.up * acceleration_amount * Time.deltaTime*thruster_amt);
+            
+            
 		
 		}
 		if (Input.GetKey(KeyCode.S)) {
