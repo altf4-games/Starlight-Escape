@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ExampleShipControl : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class ExampleShipControl : MonoBehaviour
 	public GameObject turret;
 	public float turret_rotation_speed = 3f;
 	public float thruster_amt = 1f;
+	public float thruster_fill = 100;
+	public Image thruster_fill_image;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -23,16 +27,19 @@ public class ExampleShipControl : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape))
 			Screen.lockCursor = !Screen.lockCursor;
 
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space) && thruster_fill >= 0)
 		{
 			thruster_amt = 10f;
-
+			thruster_fill -= 0.1f;
+			thruster_fill = Mathf.Clamp(thruster_fill, 0, 100);
 		}
 		else
 		{
 			thruster_amt = 1f;
+			thruster_fill += 0.5f;
+			thruster_fill = Mathf.Clamp(thruster_fill, 0, 100);
 		}
-
+		thruster_fill_image.fillAmount = thruster_fill / 100;
 		if (Input.GetKey(KeyCode.W))
 		{
 

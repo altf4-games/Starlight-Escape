@@ -9,6 +9,11 @@ public class EnemyAI : MonoBehaviour
     private float distance;
     private bool isAttacking = false;
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
