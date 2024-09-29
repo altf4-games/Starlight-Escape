@@ -12,6 +12,7 @@ public class ExampleShipControl : MonoBehaviour
 	public float thruster_amt = 1f;
 	public float thruster_fill = 100;
 	public Image thruster_fill_image;
+	public float max_thrust = 10f;
 
 	// Use this for initialization
 	void Start()
@@ -22,14 +23,12 @@ public class ExampleShipControl : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-
 		if (Input.GetKeyDown(KeyCode.Escape))
 			Screen.lockCursor = !Screen.lockCursor;
 
 		if (Input.GetKey(KeyCode.Space) && thruster_fill >= 0)
 		{
-			thruster_amt = 10f;
+			thruster_amt = max_thrust;
 			thruster_fill -= 0.1f;
 			thruster_fill = Mathf.Clamp(thruster_fill, 0, 100);
 		}

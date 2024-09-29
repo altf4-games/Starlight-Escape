@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int health = 100;
+    public int health = 100;
+    public int maxHealth = 100;
     public GameObject explosionPrefab;
     public SpriteRenderer[] spriteRenderers;
     public GameObject engine;
