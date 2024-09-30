@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 12853364}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12957108, y: 0.08048183, z: 1.63}
+  m_LocalPosition: {x: 0.12957108, y: -0.76, z: 1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11386,7 +11386,7 @@ Transform:
   m_GameObject: {fileID: 1537317946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -6.55, y: 0.7, z: 895}
+  m_LocalPosition: {x: -6.48, y: 0.52, z: 895}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12271,6 +12271,7 @@ GameObject:
   - component: {fileID: 1714206667}
   - component: {fileID: 1714206666}
   - component: {fileID: 1714206668}
+  - component: {fileID: 1714206669}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -12379,7 +12380,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 5
+--- !u!114 &1714206669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714206665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d530de316a657cc45a5cba4edb951ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1882295893
 GameObject:
   m_ObjectHideFlags: 0
@@ -13719,7 +13732,7 @@ Transform:
   m_GameObject: {fileID: 2084752106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.91, y: -0.79, z: -1.63}
+  m_LocalPosition: {x: -1.9, y: -2.29, z: -1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
