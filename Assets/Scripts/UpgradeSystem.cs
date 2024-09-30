@@ -12,6 +12,7 @@ public class UpgradeSystem : MonoBehaviour
     private PlayerHealth playerHealth;
     private PlayerAttacks playerAttacks;
     private ExampleShipControl playerShipControl;
+    public AudioClip clickSound;
 
     private void Start()
     {
@@ -34,15 +35,18 @@ public class UpgradeSystem : MonoBehaviour
             text.text = "Points: " + playerXP.upgradePoints.ToString();
         }
         panel.SetActive(true);
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
     }
 
     public void ClosePanel()
     {
         panel.SetActive(false);
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
     }
 
     public void UpgradeHealth()
     {
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
         if (playerXP == null || playerHealth == null || playerXP.upgradePoints <= 0)
         {
             return;
@@ -56,6 +60,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public void UpgradeAttackCooldown()
     {
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
         if (playerXP == null || playerAttacks == null || playerXP.upgradePoints <= 0)
         {
             return;
@@ -68,6 +73,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public void UpgradeShieldCooldown()
     {
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
         if (playerXP == null || playerAttacks == null || playerXP.upgradePoints <= 0)
         {
             return;
@@ -80,6 +86,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public void UpgradeThrusterMaxSpeed()
     {
+        AudioManager.instance.PlayAudio(clickSound, 0.8f, false);
         if (playerXP == null || playerShipControl == null || playerXP.upgradePoints <= 0)
         {
             return;

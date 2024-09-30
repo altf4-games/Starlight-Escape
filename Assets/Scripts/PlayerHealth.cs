@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer[] spriteRenderers;
     public GameObject engine;
     public Image healthBar;
+    public AudioClip explosionSound;
 
     public void TakeDamage(int damage)
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player died");
         GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 1.5f);
+        AudioManager.instance.PlayAudio(AudioManager.instance.explosionSound, 0.8f, true, 100f, transform.position);
         foreach (SpriteRenderer sr in spriteRenderers)
         {
             sr.enabled = false;

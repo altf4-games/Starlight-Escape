@@ -14,6 +14,8 @@ public class PlayerAttacks : MonoBehaviour
     public GameObject projectileSpawnPositionL;
     public GameObject projectileSpawnPositionR;
     public GameObject projectilePrefab;
+    public AudioClip shieldSound;
+    public AudioClip projectileSound;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class PlayerAttacks : MonoBehaviour
         {
             return;
         }
+        AudioManager.instance.PlayAudio(projectileSound, 0.8f, false);
         isShooting = true;
         GameObject projectileL = Instantiate(projectilePrefab, projectileSpawnPositionL.transform.position, projectileSpawnPositionL.transform.rotation);
         GameObject projectileR = Instantiate(projectilePrefab, projectileSpawnPositionR.transform.position, projectileSpawnPositionR.transform.rotation);
@@ -64,6 +67,7 @@ public class PlayerAttacks : MonoBehaviour
         {
             return;
         }
+        AudioManager.instance.PlayAudio(shieldSound, 0.8f, false);
         shieldActive = true;
         shield.SetActive(true);
         StartCoroutine(DeactivateShield());

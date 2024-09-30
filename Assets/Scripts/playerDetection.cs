@@ -1,28 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class playerDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
-    void Start()
-    {
-        string name = gameObject.name;
-    }
+    public TextMeshProUGUI text;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!PlayerPrefs.HasKey(name))
+        if (other.CompareTag("Player"))
         {
-            PlayerPrefs.SetString(name, name);
+            int currCount = int.Parse(text.text);
+            currCount++;
+            text.text = currCount.ToString();
+            this.enabled = false;
         }
     }
-
 }

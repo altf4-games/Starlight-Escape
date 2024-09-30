@@ -12,6 +12,7 @@ public class KillEnemy : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<XP>().AddXP(50);
+            AudioManager.instance.PlayAudio(AudioManager.instance.explosionSound, 0.8f, true, 1000f, other.transform.position);
             Destroy(other.gameObject);
             GameObject explosion = Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
             Destroy(explosion, 1.5f);
