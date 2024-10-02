@@ -54,6 +54,7 @@ public class UpgradeSystem : MonoBehaviour
 
         playerXP.upgradePoints -= 1;
         playerHealth.maxHealth += 50;
+        playerHealth.SaveProgress();
         playerHealth.health = playerHealth.maxHealth;  // Update health to max health
         ClosePanel();
     }
@@ -68,6 +69,7 @@ public class UpgradeSystem : MonoBehaviour
 
         playerXP.upgradePoints -= 1;
         playerAttacks.projectileCooldown *= 0.75f;  // Reduce cooldown by 25%
+        playerAttacks.SaveProjectileCooldown();
         ClosePanel();
     }
 
@@ -81,6 +83,7 @@ public class UpgradeSystem : MonoBehaviour
 
         playerXP.upgradePoints -= 1;
         playerAttacks.shieldCooldown *= 0.75f;  // Reduce cooldown by 25%
+        playerAttacks.SaveShieldCooldown();
         ClosePanel();
     }
 
@@ -94,6 +97,7 @@ public class UpgradeSystem : MonoBehaviour
 
         playerXP.upgradePoints -= 1;
         playerShipControl.max_thrust *= 1.25f;  // Increase max thrust by 25%
+        playerShipControl.SaveThrusterMaxSpeed();
         ClosePanel();
     }
 }

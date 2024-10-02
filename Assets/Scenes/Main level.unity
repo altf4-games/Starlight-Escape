@@ -745,7 +745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: /???
+  m_text: /6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e20b951d36da46e42bb47f98a1d55cd4, type: 2}
   m_sharedMaterial: {fileID: 7336043565135730259, guid: e20b951d36da46e42bb47f98a1d55cd4, type: 2}
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 1
-  spawnRange: 8
+  spawnRange: 12
   playerTransform: {fileID: 1247207083}
   parent: {fileID: 1949663011}
   enemyPrefab: {fileID: 2492572933559548633, guid: 2bf970f6643f23c4996affd1d8373a93, type: 3}
@@ -1852,6 +1852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!58 &280353463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4798,6 +4799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!58 &538270128
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6276,6 +6278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!58 &724332379
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6940,6 +6943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!58 &857529269
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9381,6 +9385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!58 &1270218761
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17250,6 +17255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 661755996}
+  planet: 0
 --- !u!1 &1733364051
 GameObject:
   m_ObjectHideFlags: 0

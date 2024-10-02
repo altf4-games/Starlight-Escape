@@ -17,7 +17,8 @@ public class ExampleShipControl : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+		max_thrust = PlayerPrefs.GetFloat("ThrusterMaxSpeed", 2f);
+		Debug.Log("ThrusterMaxSpeed: " + max_thrust);
 	}
 
 	// Update is called once per frame
@@ -29,13 +30,13 @@ public class ExampleShipControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.Space) && thruster_fill >= 0)
 		{
 			thruster_amt = max_thrust;
-			thruster_fill -= 1f;
+			thruster_fill -= 0.5f;
 			thruster_fill = Mathf.Clamp(thruster_fill, 0, 100);
 		}
 		else
 		{
 			thruster_amt = 1f;
-			thruster_fill += 0.5f;
+			thruster_fill += 0.25f;
 			thruster_fill = Mathf.Clamp(thruster_fill, 0, 100);
 		}
 		thruster_fill_image.fillAmount = thruster_fill / 100;
@@ -85,9 +86,10 @@ public class ExampleShipControl : MonoBehaviour
 		{
 			transform.position = new Vector3(0, 0, 0);
 		}
+	}
 
-
-
-
+	public void SaveThrusterMaxSpeed()
+	{
+		PlayerPrefs.SetFloat("ThrusterMaxSpeed", max_thrust);
 	}
 }

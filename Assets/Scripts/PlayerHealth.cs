@@ -14,6 +14,13 @@ public class PlayerHealth : MonoBehaviour
     public Image healthBar;
     public AudioClip explosionSound;
 
+    private void Start()
+    {
+        maxHealth = PlayerPrefs.GetInt("PlayerHealth", 100);
+        health = maxHealth;
+        Debug.Log("Player Health: " + maxHealth);
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -36,6 +43,11 @@ public class PlayerHealth : MonoBehaviour
         engine.SetActive(false);
         // Reload the scene
         Invoke("ReloadGame", 2.25f);
+    }
+
+    public void SaveProgress()
+    {
+        PlayerPrefs.SetInt("PlayerHealth", maxHealth);
     }
 
     private void ReloadGame()

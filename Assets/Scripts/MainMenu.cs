@@ -13,9 +13,10 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(1);
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        GetComponent<Comic>().StartCoroutine("ShowComic");
+        //SceneManager.LoadScene(1);
     }
 
     public void QuitButton()

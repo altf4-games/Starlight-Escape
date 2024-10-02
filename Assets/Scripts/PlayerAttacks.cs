@@ -20,7 +20,10 @@ public class PlayerAttacks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        shieldCooldown = PlayerPrefs.GetFloat("ShieldCooldown", 10f);
+        projectileCooldown = PlayerPrefs.GetFloat("ProjectileCooldown", 0.1f);
+        Debug.Log("Shield Cooldown: " + shieldCooldown);
+        Debug.Log("Projectile Cooldown: " + projectileCooldown);
     }
 
     // Update is called once per frame
@@ -28,13 +31,13 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Right Mouse Button Clicked");
+            //Debug.Log("Right Mouse Button Clicked");
             ActivateShield();
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Left Mouse Button Clicked");
+            //Debug.Log("Left Mouse Button Clicked");
             FireProjectile();
         }
     }
@@ -71,6 +74,16 @@ public class PlayerAttacks : MonoBehaviour
         shieldActive = true;
         shield.SetActive(true);
         StartCoroutine(DeactivateShield());
+    }
+
+    public void SaveShieldCooldown()
+    {
+        PlayerPrefs.SetFloat("ShieldCooldown", shieldCooldown);
+    }
+
+    public void SaveProjectileCooldown()
+    {
+        PlayerPrefs.SetFloat("ProjectileCooldown", projectileCooldown);
     }
 
     IEnumerator DeactivateShield()
